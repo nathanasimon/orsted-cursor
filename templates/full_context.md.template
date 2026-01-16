@@ -1,0 +1,39 @@
+# Full Context Log
+
+> **[AUDIT] Complete history of all changes.** This is an audit trail, not a working document.  
+> **AI: Don't read this file unless explicitly asked.** Use `claude.md` for current context.
+
+---
+
+## About This File
+
+- **Auto-updated** after every agent response
+- **Append-only** — never delete entries
+- **For debugging** — when you need to trace what happened
+- **Git-friendly** — consider adding to `.gitignore` if it gets large
+
+---
+
+## Log
+
+<!-- Format:
+## YYYY-MM-DD HH:MM:SS
+
+**Action:** [What was done]  
+**Files:** [Files modified]  
+**Reasoning:** [Why this change was made]  
+**Outcome:** [Success/Partial/Failed]
+
+---
+-->
+
+## YYYY-MM-DD HH:MM:SS
+
+**Action:** Initialized ORSTED  
+**Files:** .orsted/*  
+**Reasoning:** Project setup  
+**Outcome:** Success
+
+---
+
+_End of log._

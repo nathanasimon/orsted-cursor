@@ -1,0 +1,120 @@
+# Project Info
+
+> **[INFO] Read this first.** Stable reference for project structure and conventions.  
+> **Updated:** YYYY-MM-DD
+
+---
+
+## What Is This Project?
+
+<!-- One paragraph. What does this project do? Who is it for? -->
+
+[Describe the project purpose]
+
+---
+
+## Tech Stack
+
+| Layer | Technology | Version |
+|-------|------------|---------|
+| Language | — | — |
+| Framework | — | — |
+| Database | — | — |
+| Hosting | — | — |
+
+---
+
+## Project Structure
+
+```
+project/
+├── .orsted/           # AI context (you are here)
+├── src/               # [describe]
+├── tests/             # [describe]
+└── ...
+```
+
+<!-- Add key directories and their purposes -->
+
+---
+
+## Key Files
+
+| File | Purpose | When to Modify |
+|------|---------|----------------|
+| — | — | — |
+
+---
+
+## Commands
+
+```bash
+# Development
+npm run dev          # [what this does]
+
+# Testing
+npm test             # [what this does]
+
+# Build
+npm run build        # [what this does]
+```
+
+---
+
+## Conventions
+
+### Naming
+- Files: `kebab-case.ts`
+- Components: `PascalCase`
+- Functions: `camelCase`
+- Constants: `SCREAMING_SNAKE_CASE`
+
+### Code Style
+<!-- Add project-specific style rules -->
+- [Convention 1]
+- [Convention 2]
+
+### Git
+- Branch format: `type/description` (e.g., `feat/user-auth`)
+- Commit format: `type: description` (e.g., `fix: resolve login bug`)
+
+---
+
+## Architecture
+
+<!-- High-level architecture description. Diagrams welcome. -->
+
+```
+[Request] → [Handler] → [Service] → [Database]
+                ↓
+           [Response]
+```
+
+---
+
+## External Dependencies
+
+| Service | Purpose | Docs |
+|---------|---------|------|
+| — | — | — |
+
+---
+
+## Environment Variables
+
+| Variable | Purpose | Required |
+|----------|---------|----------|
+| — | — | — |
+
+---
+
+## Gotchas
+
+<!-- Things that aren't obvious. Save future-you time. -->
+
+- [WARNING] [Non-obvious thing 1]
+- [WARNING] [Non-obvious thing 2]
+
+---
+
+_This file changes rarely. Update when project structure changes._

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "hooks": {
+    "beforeSubmitPrompt": [
+      {
+        "command": "~/.cursor/hooks/orsted_before_prompt.sh"
+      }
+    ],
+    "afterFileEdit": [
+      {
+        "command": "~/.cursor/hooks/orsted_file_edit.sh"
+      }
+    ],
+    "afterAgentResponse": [
+      {
+        "command": "~/.cursor/hooks/orsted_after_response.sh"
+      }
+    ]
+  }
+}
