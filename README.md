@@ -2,16 +2,54 @@
 
 **Persistent context system for Cursor IDE** — automatically tracks what you do, why you did it, and what failed.
 
-## Quick Install
+## Installation
+
+### Quick Install
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/nathanasimon/orsted-cursor.git
+   cd orsted-cursor
+   ```
+
+2. **Run the install script:**
+   ```bash
+   chmod +x install.sh
+   ./install.sh
+   ```
+
+3. **Restart Cursor** for hooks to take effect.
+
+That's it! Orsted will now automatically track context in your projects.
+
+### What Gets Installed
+
+The install script sets up:
+- ✅ Hook scripts in `~/.cursor/hooks/`
+- ✅ Hook configuration in `~/.cursor/hooks.json`
+- ✅ Templates in `~/.cursor/orsted-templates/`
+- ✅ Test script (`orsted_test.sh`)
+- ✅ Cursor command (`/orsted-test`)
+
+### Verify Installation
+
+After installing, test that everything works:
 
 ```bash
-git clone https://github.com/nathanasimon/orsted.git
-cd orsted/cursor
-chmod +x install.sh
-./install.sh
+~/.cursor/hooks/orsted_test.sh
 ```
 
-Then **restart Cursor**.
+Or use the Cursor command: type `/orsted-test` in chat.
+
+### Project Setup (Optional)
+
+To customize templates for a specific project:
+
+1. Copy `.cursorrules` to your project root (tells AI to read `.orsted/` files)
+2. Create `.orsted/` folder in project root
+3. Copy templates from `~/.cursor/orsted-templates/` to `.orsted/` if you want custom templates
+
+Orsted will work automatically without this setup, but custom templates give you more control.
 
 ## What It Does
 
@@ -37,29 +75,33 @@ Everything runs silently in the background. No notifications, no interruptions.
 
 - **Cursor IDE** (not Claude Code)
 - Bash shell
-- `jq` (optional, for better JSON parsing)
+- `jq` (optional, but recommended for better JSON parsing)
 
-## Installation
-
-See `INSTALL.md` for detailed instructions.
+For detailed installation instructions, see [INSTALL.md](INSTALL.md).
 
 ## Testing
 
-Run the test script to verify Orsted is installed correctly:
+After installation, verify everything is working:
 
+**Option 1: Run the test script**
 ```bash
 ~/.cursor/hooks/orsted_test.sh
 ```
 
-Or use the Cursor command:
-- Type `/orsted-test` in the chat
+**Option 2: Use the Cursor command**
+- Type `/orsted-test` in the Cursor chat
 
-The test checks:
+The test verifies:
 - ✓ Hook scripts are installed and executable
 - ✓ hooks.json is configured correctly
 - ✓ Templates are available
 - ✓ Dependencies (jq) are installed
 - ✓ .orsted folders exist in workspace
+
+**Option 3: Manual test**
+1. Edit a file in any directory
+2. Submit a prompt to the AI
+3. Check if `.orsted/` folder was created/updated
 
 ## Uninstall
 

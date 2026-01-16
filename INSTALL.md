@@ -2,14 +2,31 @@
 
 ## Quick Install
 
-```bash
-git clone https://github.com/nathanasimon/orsted.git
-cd orsted
-chmod +x install.sh
-./install.sh
-```
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/nathanasimon/orsted-cursor.git
+   cd orsted-cursor
+   ```
 
-Then **restart Cursor**.
+2. **Run the install script:**
+   ```bash
+   chmod +x install.sh
+   ./install.sh
+   ```
+
+3. **Restart Cursor** for hooks to take effect.
+
+The install script will:
+- Install hook scripts to `~/.cursor/hooks/`
+- Configure hooks in `~/.cursor/hooks.json`
+- Copy templates to `~/.cursor/orsted-templates/`
+- Install test script (`orsted_test.sh`)
+- Install Cursor command (`/orsted-test`)
+
+After installation, verify with:
+```bash
+~/.cursor/hooks/orsted_test.sh
+```
 
 ## Manual Install
 
