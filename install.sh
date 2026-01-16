@@ -44,13 +44,25 @@ if [ -f "$SCRIPT_DIR/scripts/test.sh" ]; then
     echo "Test script installed: ~/.cursor/hooks/orsted_test.sh"
 fi
 
-# Install Cursor command for testing
-echo "Installing Cursor command..."
+# Copy init script if it exists
+if [ -f "$SCRIPT_DIR/scripts/init.sh" ]; then
+    cp "$SCRIPT_DIR/scripts/init.sh" "$HOME/.cursor/hooks/orsted_init.sh"
+    chmod +x "$HOME/.cursor/hooks/orsted_init.sh"
+    echo "Init script installed: ~/.cursor/hooks/orsted_init.sh"
+fi
+
+# Install Cursor commands
+echo "Installing Cursor commands..."
 mkdir -p "$HOME/.cursor/commands"
 if [ -f "$SCRIPT_DIR/scripts/orsted-test.md" ]; then
     cp "$SCRIPT_DIR/scripts/orsted-test.md" "$HOME/.cursor/commands/orsted-test.md"
     echo "Cursor command installed: ~/.cursor/commands/orsted-test.md"
-else
+fi
+if [ -f "$SCRIPT_DIR/scripts/orsted-init.md" ]; then
+    cp "$SCRIPT_DIR/scripts/orsted-init.md" "$HOME/.cursor/commands/orsted-init.md"
+    echo "Cursor command installed: ~/.cursor/commands/orsted-init.md"
+fi
+if [ ! -f "$HOME/.cursor/commands/orsted-test.md" ]; then
     # Create a basic command file if template doesn't exist
     cat > "$HOME/.cursor/commands/orsted-test.md" << 'EOF'
 # Orsted Test

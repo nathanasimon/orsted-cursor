@@ -151,7 +151,15 @@ if [ "$ORSTED_COUNT" -gt 0 ]; then
         ((PASS_COUNT++))
     fi
 else
-    echo -e "${YELLOW}⚠${NC} No .orsted folders found (may need to trigger initialization)"
+    echo -e "${YELLOW}⚠${NC} No .orsted folders found in workspace"
+    echo ""
+    echo "   This is NORMAL for first use. .orsted will be created when:"
+    echo "   1. You submit your first prompt to the AI (auto-initialized), OR"
+    echo "   2. The AI edits any file in this directory, OR"
+    echo "   3. You run: ~/.cursor/hooks/orsted_init.sh \"$WORKSPACE\""
+    echo ""
+    echo "   To manually initialize now:"
+    echo "   ~/.cursor/hooks/orsted_init.sh \"$WORKSPACE\""
 fi
 
 # Summary
