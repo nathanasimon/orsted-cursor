@@ -10,7 +10,7 @@
 
 ```bash
 cd /Users/nathansimon/orsted-marketplace-1/orsted-cursor-repo
-git remote add origin https://github.com/yourusername/orsted-cursor.git
+git remote add origin https://github.com/nathanasimon/orsted-cursor.git
 git branch -M main
 git push -u origin main
 ```
@@ -18,4 +18,4 @@ git push -u origin main
 ## Update README
 
 After pushing, update the GitHub URLs in:
-- `README.md` - Replace `yourusername` with your actual GitHub username
+- `README.md` - Replace `nathanasimon` with your actual GitHub username

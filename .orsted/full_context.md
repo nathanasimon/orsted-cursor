@@ -53,16 +53,16 @@ _End of log._
    ```bash
    # For orsted-cursor
    cd orsted-cursor-repo
-   git remote add origin https://github.com/yourusername/orsted-cursor.git
+   git remote add origin https://github.com/nathanasimon/orsted-cursor.git
    git push -u origin main
    
    # For orsted-claude-code
    cd orsted-claude-code-repo
-   git remote add origin https://github.com/yourusername/orsted-claude-code.git
+   git remote add origin https://github.com/nathanasimon/orsted-claude-code.git
    git push -u origin main
    ```
 
-3. Update README.md files — Replace `yourusername` with your GitHub username
+3. Update README.md files — Replace `nathanasimon` with your GitHub username
 
 Both repositories are separate, self-contained, and ready to publish.  
 **Outcome:** Success

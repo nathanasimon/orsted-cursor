@@ -3,7 +3,7 @@
 ## Quick Install
 
 ```bash
-git clone https://github.com/yourusername/orsted.git
+git clone https://github.com/nathanasimon/orsted.git
 cd orsted
 chmod +x install.sh
 ./install.sh

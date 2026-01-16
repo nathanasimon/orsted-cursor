@@ -5,7 +5,7 @@
 ## Quick Install
 
 ```bash
-git clone https://github.com/yourusername/orsted.git
+git clone https://github.com/nathanasimon/orsted.git
 cd orsted/cursor
 chmod +x install.sh
 ./install.sh
