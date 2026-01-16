@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ORSTED: Track file edits to know which folders were worked in
+# Orsted: Track file edits to know which folders were worked in
 # Stores folder paths for the stop hook to process
 
 INPUT=$(cat)

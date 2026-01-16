@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# ORSTED Installation Script
-# Installs ORSTED hooks and templates to ~/.cursor/
+# Orsted Installation Script
+# Installs Orsted hooks and templates to ~/.cursor/
 
 set -e
 
-echo "ORSTED Installation"
+echo "Orsted Installation"
 echo "======================"
 echo ""
 
@@ -75,7 +75,7 @@ if [ -d "$SCRIPT_DIR/templates" ]; then
 fi
 
 echo ""
-echo "✅ ORSTED installed successfully!"
+echo "✅ Orsted installed successfully!"
 echo ""
 echo "Next steps:"
 echo "1. Restart Cursor for hooks to take effect"

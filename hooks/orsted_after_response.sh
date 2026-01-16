@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ORSTED: Automatically update .orsted/ folder files after every agent response
+# Orsted: Automatically update .orsted/ folder files after every agent response
 # Creates structured context files in .orsted/ folder per directory
 
 INPUT=$(cat)
@@ -69,8 +69,8 @@ if [ -f "$UPDATED_DIRS_FILE" ]; then
         continue
       fi
       
-      ORSTED_DIR="$DIR/.orsted"
-      mkdir -p "$ORSTED_DIR"
+      Orsted_DIR="$DIR/.orsted"
+      mkdir -p "$Orsted_DIR"
       TODAY=$(date +%Y-%m-%d)
       NOW=$(date +%Y-%m-%d\ %H:%M:%S)
       FOLDER_NAME=$(basename "$DIR")
@@ -79,16 +79,16 @@ if [ -f "$UPDATED_DIRS_FILE" ]; then
       fi
       
       # 1. Update claude.md (standard context)
-      if [ ! -f "$ORSTED_DIR/claude.md" ]; then
+      if [ ! -f "$Orsted_DIR/claude.md" ]; then
         # Check if there's a template in project root
         TEMPLATE_FILE="$WORKSPACE_ROOT/.orsted/claude.md.template"
         if [ -f "$TEMPLATE_FILE" ]; then
           # Use template, replacing date placeholder
           TODAY=$(date +%Y-%m-%d)
-          sed "s/YYYY-MM-DD/$TODAY/g" "$TEMPLATE_FILE" > "$ORSTED_DIR/claude.md"
+          sed "s/YYYY-MM-DD/$TODAY/g" "$TEMPLATE_FILE" > "$Orsted_DIR/claude.md"
         else
           # Fallback template
-          cat > "$ORSTED_DIR/claude.md" << EOF
+          cat > "$Orsted_DIR/claude.md" << EOF
 # Session Context
 
 > **Last updated:** $(date +%Y-%m-%d)  
@@ -103,7 +103,7 @@ None yet.
 
 | Date | What | Why |
 |------|------|-----|
-| $(date +%Y-%m-%d) | Initialized ORSTED | Project setup |
+| $(date +%Y-%m-%d) | Initialized Orsted | Project setup |
 
 ---
 
@@ -153,9 +153,9 @@ EOF
       fi
       
       # Only add if today's entry doesn't exist
-      if ! grep -q "| ${TODAY} |" "$ORSTED_DIR/claude.md"; then
+      if ! grep -q "| ${TODAY} |" "$Orsted_DIR/claude.md"; then
         # Find Work Log table and add row before the closing separator
-        if grep -q "## Work Log" "$ORSTED_DIR/claude.md"; then
+        if grep -q "## Work Log" "$Orsted_DIR/claude.md"; then
           # Add row to table
           WHAT="${USER_PROMPT:-Files edited}"
           if [ -n "$FILES_LIST" ]; then
@@ -165,15 +165,15 @@ EOF
           
           # Insert row after table header, before any existing rows
           sed -i.bak "/^| Date | What | Why |$/a\\
-| ${TODAY} | ${WHAT} | ${WHY} |" "$ORSTED_DIR/claude.md" 2>/dev/null || \
+| ${TODAY} | ${WHAT} | ${WHY} |" "$Orsted_DIR/claude.md" 2>/dev/null || \
           # Fallback: append to end if sed fails
-          echo "| ${TODAY} | ${WHAT} | ${WHY} |" >> "$ORSTED_DIR/claude.md"
+          echo "| ${TODAY} | ${WHAT} | ${WHY} |" >> "$Orsted_DIR/claude.md"
         fi
       fi
       
       # Update "Last updated" date
-      sed -i.bak "s/\*\*Last updated:\*\* .*/\*\*Last updated:\*\* ${TODAY}/" "$ORSTED_DIR/claude.md" 2>/dev/null || true
-      rm -f "$ORSTED_DIR/claude.md.bak"
+      sed -i.bak "s/\*\*Last updated:\*\* .*/\*\*Last updated:\*\* ${TODAY}/" "$Orsted_DIR/claude.md" 2>/dev/null || true
+      rm -f "$Orsted_DIR/claude.md.bak"
       
       # 2. Update full_context.md (maximalist log with full details)
       # Get user prompt
@@ -241,15 +241,15 @@ EOF
       fi
       
       # Create detailed entry using template format
-      if [ ! -f "$ORSTED_DIR/full_context.md" ]; then
+      if [ ! -f "$Orsted_DIR/full_context.md" ]; then
         TEMPLATE_FILE="$WORKSPACE_ROOT/.orsted/full_context.md.template"
         if [ -f "$TEMPLATE_FILE" ]; then
-          cp "$TEMPLATE_FILE" "$ORSTED_DIR/full_context.md"
+          cp "$TEMPLATE_FILE" "$Orsted_DIR/full_context.md"
           # Remove the example entry
-          sed -i.bak '/^## YYYY-MM-DD HH:MM:SS$/,/^---$/d' "$ORSTED_DIR/full_context.md" 2>/dev/null || true
-          rm -f "$ORSTED_DIR/full_context.md.bak"
+          sed -i.bak '/^## YYYY-MM-DD HH:MM:SS$/,/^---$/d' "$Orsted_DIR/full_context.md" 2>/dev/null || true
+          rm -f "$Orsted_DIR/full_context.md.bak"
         else
-          cat > "$ORSTED_DIR/full_context.md" << EOF
+          cat > "$Orsted_DIR/full_context.md" << EOF
 # Full Context Log
 
 > 📜 **Complete history of all changes.** This is an audit trail, not a working document.  
@@ -272,7 +272,7 @@ EOF
       fi
       
       # Append new entry
-      cat >> "$ORSTED_DIR/full_context.md" << EOF
+      cat >> "$Orsted_DIR/full_context.md" << EOF
 
 ## ${NOW}
 
@@ -286,14 +286,14 @@ EOF
       
       
       # 3. Create project_info.md if doesn't exist
-      if [ ! -f "$ORSTED_DIR/project_info.md" ]; then
+      if [ ! -f "$Orsted_DIR/project_info.md" ]; then
         TEMPLATE_FILE="$WORKSPACE_ROOT/.orsted/project_info.md.template"
         if [ -f "$TEMPLATE_FILE" ]; then
           TODAY=$(date +%Y-%m-%d)
-          sed "s/YYYY-MM-DD/$TODAY/g" "$TEMPLATE_FILE" > "$ORSTED_DIR/project_info.md"
+          sed "s/YYYY-MM-DD/$TODAY/g" "$TEMPLATE_FILE" > "$Orsted_DIR/project_info.md"
         else
           # Fallback template
-          cat > "$ORSTED_DIR/project_info.md" << EOF
+          cat > "$Orsted_DIR/project_info.md" << EOF
 # Project Info
 
 > 📖 **Read this first.** Stable reference for project structure and conventions.  
@@ -357,13 +357,13 @@ EOF
       fi
       
       # 4. Create critical_mistakes.md if doesn't exist
-      if [ ! -f "$ORSTED_DIR/critical_mistakes.md" ]; then
+      if [ ! -f "$Orsted_DIR/critical_mistakes.md" ]; then
         TEMPLATE_FILE="$WORKSPACE_ROOT/.orsted/critical_mistakes.md.template"
         if [ -f "$TEMPLATE_FILE" ]; then
-          cp "$TEMPLATE_FILE" "$ORSTED_DIR/critical_mistakes.md"
+          cp "$TEMPLATE_FILE" "$Orsted_DIR/critical_mistakes.md"
         else
           # Fallback template
-          cat > "$ORSTED_DIR/critical_mistakes.md" << EOF
+          cat > "$Orsted_DIR/critical_mistakes.md" << EOF
 # Critical Mistakes
 
 > **Purpose:** Learn from corrections. Never repeat the same mistake twice.

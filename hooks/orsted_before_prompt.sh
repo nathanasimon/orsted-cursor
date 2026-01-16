@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ORSTED: Capture user prompt before it's processed
+# Orsted: Capture user prompt before it's processed
 # Stores the prompt for full_context.md logging
 
 INPUT=$(cat)

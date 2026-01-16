@@ -49,7 +49,7 @@ Restart Cursor for hooks to take effect.
 
 ## Project Setup
 
-After installation, set up ORSTED in your project:
+After installation, set up Orsted in your project:
 
 1. **Copy `.cursorrules`** to your project root
 2. **Create `.orsted/` folder** in your project root

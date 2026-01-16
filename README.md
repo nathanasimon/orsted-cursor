@@ -1,4 +1,4 @@
-# ORSTED for Cursor
+# Orsted for Cursor
 
 **Persistent context system for Cursor IDE** — automatically tracks what you do, why you did it, and what failed.
 
@@ -15,7 +15,7 @@ Then **restart Cursor**.
 
 ## What It Does
 
-ORSTED creates a `.orsted/` folder in each directory where you work, containing:
+Orsted creates a `.orsted/` folder in each directory where you work, containing:
 
 - **`claude.md`** — Working memory (current focus, work log, decisions)
 - **`project_info.md`** — Project overview (tech stack, structure, conventions)
