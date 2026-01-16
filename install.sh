@@ -58,6 +58,13 @@ if [ -f "$SCRIPT_DIR/scripts/update.sh" ]; then
     echo "Update script installed: ~/.cursor/hooks/orsted_update.sh"
 fi
 
+# Copy migrate script if it exists
+if [ -f "$SCRIPT_DIR/scripts/migrate-templates.sh" ]; then
+    cp "$SCRIPT_DIR/scripts/migrate-templates.sh" "$HOME/.cursor/hooks/orsted_migrate.sh"
+    chmod +x "$HOME/.cursor/hooks/orsted_migrate.sh"
+    echo "Migration script installed: ~/.cursor/hooks/orsted_migrate.sh"
+fi
+
 # Install Cursor commands
 echo "Installing Cursor commands..."
 mkdir -p "$HOME/.cursor/commands"
@@ -72,6 +79,10 @@ fi
 if [ -f "$SCRIPT_DIR/scripts/orsted-update.md" ]; then
     cp "$SCRIPT_DIR/scripts/orsted-update.md" "$HOME/.cursor/commands/orsted-update.md"
     echo "Cursor command installed: ~/.cursor/commands/orsted-update.md"
+fi
+if [ -f "$SCRIPT_DIR/scripts/orsted-migrate.md" ]; then
+    cp "$SCRIPT_DIR/scripts/orsted-migrate.md" "$HOME/.cursor/commands/orsted-migrate.md"
+    echo "Cursor command installed: ~/.cursor/commands/orsted-migrate.md"
 fi
 if [ ! -f "$HOME/.cursor/commands/orsted-test.md" ]; then
     # Create a basic command file if template doesn't exist

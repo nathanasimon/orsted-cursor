@@ -50,6 +50,9 @@ Manually initialize `.orsted/` folder in current workspace.
 ### `/orsted-update`
 Update Orsted to the latest version (pulls from git and reinstalls).
 
+### `/orsted-migrate`
+Safely update existing `.orsted/` files to match new template structure (preserves all data).
+
 ## Testing
 
 After installation, verify everything works:
@@ -62,7 +65,7 @@ Or use the Cursor command: type `/orsted-test` in chat.
 
 ## Updating
 
-To update Orsted to the latest version:
+### Update Orsted Itself
 
 **Option 1: Use the Cursor command**
 - Type `/orsted-update` in chat
@@ -80,6 +83,24 @@ git pull
 ```
 
 Then restart Cursor.
+
+### Update Template Structure
+
+If templates change and you want to update existing `.orsted/` files:
+
+**Option 1: Use the Cursor command**
+- Type `/orsted-migrate` in chat (preserves all existing data)
+
+**Option 2: Manual migration**
+```bash
+# Backup first!
+find . -type d -name ".orsted" -exec cp -r {} {}.backup \;
+
+# Then migrate
+~/.cursor/hooks/orsted_migrate.sh /path/to/workspace
+```
+
+**Important:** Migration preserves existing files. If template structure changed significantly, you may need to manually merge new sections.
 
 ## Uninstall
 
