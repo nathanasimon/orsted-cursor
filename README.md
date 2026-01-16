@@ -47,6 +47,9 @@ Verify Orsted is installed and working correctly.
 ### `/orsted-init`
 Manually initialize `.orsted/` folder in current workspace.
 
+### `/orsted-update`
+Update Orsted to the latest version (pulls from git and reinstalls).
+
 ## Testing
 
 After installation, verify everything works:
@@ -56,6 +59,27 @@ After installation, verify everything works:
 ```
 
 Or use the Cursor command: type `/orsted-test` in chat.
+
+## Updating
+
+To update Orsted to the latest version:
+
+**Option 1: Use the Cursor command**
+- Type `/orsted-update` in chat
+
+**Option 2: Run the update script**
+```bash
+~/.cursor/hooks/orsted_update.sh
+```
+
+**Option 3: Manual update**
+```bash
+cd /path/to/orsted-cursor-repo
+git pull
+./install.sh
+```
+
+Then restart Cursor.
 
 ## Uninstall
 
