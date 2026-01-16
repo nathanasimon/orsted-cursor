@@ -43,6 +43,24 @@ Everything runs silently in the background. No notifications, no interruptions.
 
 See `INSTALL.md` for detailed instructions.
 
+## Testing
+
+Run the test script to verify Orsted is installed correctly:
+
+```bash
+~/.cursor/hooks/orsted_test.sh
+```
+
+Or use the Cursor command:
+- Type `/orsted-test` in the chat
+
+The test checks:
+- ✓ Hook scripts are installed and executable
+- ✓ hooks.json is configured correctly
+- ✓ Templates are available
+- ✓ Dependencies (jq) are installed
+- ✓ .orsted folders exist in workspace
+
 ## Uninstall
 
 ```bash
