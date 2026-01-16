@@ -44,6 +44,17 @@ if [ -f "$SCRIPT_DIR/scripts/test.sh" ]; then
     echo "Test script installed: ~/.cursor/hooks/orsted_test.sh"
 fi
 
+# Install Cursor command for testing
+echo "Installing Cursor command..."
+mkdir -p "$HOME/.cursor/commands"
+if [ -f "$SCRIPT_DIR/scripts/orsted-test.md" ]; then
+    cp "$SCRIPT_DIR/scripts/orsted-test.md" "$HOME/.cursor/commands/orsted-test.md"
+    echo "Cursor command installed: ~/.cursor/commands/orsted-test.md"
+elif [ -f "$SCRIPT_DIR/../orsted-cursor-repo/scripts/orsted-test.md" ]; then
+    # Fallback: check if command file exists in repo
+    cp "$SCRIPT_DIR/../orsted-cursor-repo/scripts/orsted-test.md" "$HOME/.cursor/commands/orsted-test.md" 2>/dev/null || true
+fi
+
 # Install hooks.json
 echo "Installing hooks configuration..."
 if [ -f "$SCRIPT_DIR/hooks/hooks.json" ]; then
