@@ -32,8 +32,16 @@
 
 ### Example Entry (delete this after first real entry)
 
-### 2026-01-16: Used wrong import style
+### YYYY-MM-DD: Used wrong import style
 
 **Mistake:** Used relative imports `../../components/Button`
 **Correction:** Use path aliases `@/components/Button`
 **Why it matters:** Project convention, keeps imports clean
+
+---
+
+### YYYY-MM-DD: Created context files in wrong location
+
+**Mistake:** Created `.orsted/` folders in test directories or node_modules
+**Correction:** Always check `should_skip_directory()` function before creating `.orsted/` folders
+**Why it matters:** Avoids clutter and unnecessary context files in ignored directories

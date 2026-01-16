@@ -14,25 +14,76 @@
 
 ---
 
-## Log
+## Log Format
 
-<!-- Format:
-## YYYY-MM-DD HH:MM:SS
+```
+## YYYY-MM-DD HH:MM:SS | Session: [conversation_id]
 
-**Action:** [What was done]  
-**Files:** [Files modified]  
-**Reasoning:** [Why this change was made]  
-**Outcome:** [Success/Partial/Failed]
+### User Request
+> [Exact user prompt, quoted verbatim]
+
+### Actions Taken
+1. [First action with detail]
+2. [Second action with detail]
+3. [etc.]
+
+### Files Affected
+| File | Action | Lines Changed |
+|------|--------|---------------|
+| path/to/file.ts | created | +45 |
+| path/to/other.ts | modified | +12 / -3 |
+| path/to/old.ts | deleted | -89 |
+
+### Reasoning
+[Why these actions were taken to fulfill the request]
+
+### Outcome
+- **Status:** Success | Partial | Failed | Blocked
+- **Result:** [What was accomplished]
+- **Issues:** [Any problems encountered, or "None"]
+
+### Follow-up Needed
+- [ ] [Any pending tasks, or "None"]
 
 ---
--->
+```
 
-## YYYY-MM-DD HH:MM:SS
+---
 
-**Action:** Initialized ORSTED  
-**Files:** .orsted/*  
-**Reasoning:** Project setup  
-**Outcome:** Success
+## Log
+
+---
+
+## YYYY-MM-DD HH:MM:SS | Session: init
+
+### User Request
+> Initialize Orsted for this project
+
+### Actions Taken
+1. Created `.orsted/` directory
+2. Created `claude.md` with session context template
+3. Created `critical_mistakes.md` for tracking corrections
+4. Created `full_context.md` (this file) for audit trail
+5. Created `project_info.md` for project overview
+
+### Files Affected
+| File | Action | Lines Changed |
+|------|--------|---------------|
+| .orsted/claude.md | created | +32 |
+| .orsted/critical_mistakes.md | created | +28 |
+| .orsted/full_context.md | created | +85 |
+| .orsted/project_info.md | created | +52 |
+
+### Reasoning
+First-time Orsted setup. Created all four context files with templates ready for use.
+
+### Outcome
+- **Status:** Success
+- **Result:** Orsted initialized and ready
+- **Issues:** None
+
+### Follow-up Needed
+- [ ] Fill in `project_info.md` with actual project details
 
 ---
 
