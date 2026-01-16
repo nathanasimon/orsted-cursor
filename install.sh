@@ -37,6 +37,13 @@ if [ -f "$SCRIPT_DIR/hooks/orsted_after_response.sh" ]; then
     chmod +x "$HOME/.cursor/hooks/orsted_after_response.sh"
 fi
 
+# Copy test script if it exists
+if [ -f "$SCRIPT_DIR/scripts/test.sh" ]; then
+    cp "$SCRIPT_DIR/scripts/test.sh" "$HOME/.cursor/hooks/orsted_test.sh"
+    chmod +x "$HOME/.cursor/hooks/orsted_test.sh"
+    echo "Test script installed: ~/.cursor/hooks/orsted_test.sh"
+fi
+
 # Install hooks.json
 echo "Installing hooks configuration..."
 if [ -f "$SCRIPT_DIR/hooks/hooks.json" ]; then
