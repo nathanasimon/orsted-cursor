@@ -51,6 +51,13 @@ rm -f ~/.cursor/hooks.json
 rm -rf ~/.cursor/orsted-templates
 ```
 
+## Future Goals
+
+### Visual Indicators
+- **Discreet status indicators** — System to show users that Orsted is working (every prompt or at start)
+- **Non-intrusive notifications** — Visual feedback that context is being updated without interrupting workflow
+- **Status badges** — Optional indicators showing Orsted activity status
+
 ## For Claude Code Users
 
-If you're using **Claude Code** (not Cursor), see the `../orsted-claude-code/` directory.
+If you're using **Claude Code** (not Cursor), see [orsted-claude-code](https://github.com/nathanasimon/orsted-claude-code).
